@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1E1E1E"
     tools:context=".ReservationActivity">
 
     <Button
@@ -21,57 +22,15 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reservation Form"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="text"
+        android:layout_height="34dp"
+        android:layout_marginStart="32dp"
         android:text="Services"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="103dp" />
-
-    <ImageButton
-        android:id="@+id/Shaving"
-        android:layout_width="115dp"
-        android:layout_height="102dp"
-        app:srcCompat="@android:drawable/arrow_down_float"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="184dp" />
-
-    <ImageButton
-        android:id="@+id/HairWashing"
-        android:layout_width="115dp"
-        android:layout_height="102dp"
-        app:srcCompat="@android:drawable/arrow_down_float"
-        tools:layout_editor_absoluteX="260dp"
-        tools:layout_editor_absoluteY="184dp" />
-
-    <ImageButton
-        android:id="@+id/HairCare"
-        android:layout_width="115dp"
-        android:layout_height="102dp"
-        app:srcCompat="@android:drawable/arrow_down_float"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="374dp" />
-
-    <ImageButton
-        android:id="@+id/BeardTrimming"
-        android:layout_width="115dp"
-        android:layout_height="102dp"
-        app:srcCompat="@android:drawable/arrow_down_float"
-        tools:layout_editor_absoluteX="260dp"
-        tools:layout_editor_absoluteY="374dp" />
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="44dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
