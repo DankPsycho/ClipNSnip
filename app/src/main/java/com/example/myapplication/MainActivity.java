@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Find the button and set the OnClickListener using lambda expression
-        Button reservationButton = findViewById(R.id.button2);
+        Button reservationButton = findViewById(R.id.reservation_button);
         reservationButton.setOnClickListener(v -> {
             // Handle button click and navigate to the reservation screen
             Intent intent = new Intent(MainActivity.this, ReservationActivity.class);
