@@ -7,12 +7,13 @@
         <item name="android:windowBackground">@color/colorBackground</item>
     </style>
 
-    <style name="CalendarViewCustom" parent="Widget.MaterialComponents.Calendar">
+    <style name="CalendarViewCustom" parent="Widget.MaterialComponents.MaterialCalendar">
         <!-- Customizations for the calendar view -->
         <item name="android:background">@color/colorCalendarBackground</item>
         <item name="android:dateTextAppearance">@style/CalendarViewDateCustomText</item>
         <item name="android:weekDayTextAppearance">@style/CalendarViewWeekCustomText</item>
     </style>
+
 
     <style name="CalendarViewDateCustomText" parent="@android:style/TextAppearance.Small">
         <!-- Customizations for the date text appearance -->

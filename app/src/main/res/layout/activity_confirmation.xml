@@ -25,9 +25,9 @@
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/CalenderViewCustom"
-        android:dateTextAppearance="@style/CalenderViewDateCustomText"
-        android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+        android:theme="@style/CalendarViewCustom"
+        android:dateTextAppearance="@style/CalendarViewDateCustomText"
+        android:weekDayTextAppearance="@style/CalendarViewWeekCustomText"
         app:layout_constraintTop_toBottomOf="@id/textViewTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -90,3 +90,4 @@
             android:textColor="#FFFFFF"
             android:background="@drawable/toggle_button_selector" />
     </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
