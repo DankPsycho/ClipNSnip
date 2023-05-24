@@ -10,5 +10,11 @@ public class ReservationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
+
+        // Add your code for handling service selection and making a reservation
+
     }
+
+    // Other methods and code for your ReservationActivity
+
 }

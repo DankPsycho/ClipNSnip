@@ -1,28 +1,27 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
-    private Button reservationsButton;
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        reservationsButton = findViewById(R.id.reservations_button);
-        reservationsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ReservationsActivity.class);
-                startActivity(intent);
-            }
+        // Find the button and set the OnClickListener using lambda expression
+        Button reservationButton = findViewById(R.id.button2);
+        reservationButton.setOnClickListener(v -> {
+            // Handle button click and navigate to the reservation screen
+            Intent intent = new Intent(MainActivity.this, ReservationActivity.class);
+            startActivity(intent);
         });
     }
+
+    // Other methods and code for your MainActivity
+
 }
