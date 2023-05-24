@@ -15,4 +15,7 @@
     <string name="services">Services</string>
     <string name="blankspace"> </string>
 
+    <string name="logo_description">logo</string>
+    <string name="reservation">Make a Reservation</string>
+
 </resources>
