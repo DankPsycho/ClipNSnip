@@ -1,27 +1,13 @@
 <resources>
+
+    <!-- Default AppTheme -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Customize the theme attributes -->
-        <item name="android:colorPrimary">@color/colorPrimary</item>
-        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="android:colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/colorBackground</item>
+        <!-- No customizations -->
     </style>
 
+    <!-- Default CalendarView style -->
     <style name="CalendarViewCustom" parent="Widget.MaterialComponents.MaterialCalendar">
-        <!-- Customizations for the calendar view -->
-        <item name="android:background">@color/colorCalendarBackground</item>
-        <item name="android:dateTextAppearance">@style/CalendarViewDateCustomText</item>
-        <item name="android:weekDayTextAppearance">@style/CalendarViewWeekCustomText</item>
+        <!-- No customizations -->
     </style>
 
-
-    <style name="CalendarViewDateCustomText" parent="@android:style/TextAppearance.Small">
-        <!-- Customizations for the date text appearance -->
-        <item name="android:textColor">@color/colorCalendarDateText</item>
-    </style>
-
-    <style name="CalendarViewWeekCustomText" parent="@android:style/TextAppearance.Small">
-        <!-- Customizations for the week day text appearance -->
-        <item name="android:textColor">@color/colorCalendarWeekText</item>
-    </style>
 </resources>

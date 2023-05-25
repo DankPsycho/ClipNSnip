@@ -17,5 +17,5 @@
 
     <string name="logo_description">logo</string>
     <string name="reservation">Make a Reservation</string>
-
+    <string name="confirmation">Confirm reservation</string>
 </resources>
