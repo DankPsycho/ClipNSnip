@@ -2,8 +2,9 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,11 +13,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button startButton = findViewById(R.id.button_reservation);
-        startButton.setOnClickListener(v -> {
-            // Handle button click and navigate to the ReservationActivity
+        // Find the button and set the OnClickListener using lambda expression
+        Button reservationButton = findViewById(R.id.button_reservation);
+        reservationButton.setOnClickListener(v -> {
+            // Handle button click and navigate to the reservation screen
             Intent intent = new Intent(MainActivity.this, ReservationActivity.class);
             startActivity(intent);
         });
     }
+
+    // Other methods and code for your MainActivity
+
 }

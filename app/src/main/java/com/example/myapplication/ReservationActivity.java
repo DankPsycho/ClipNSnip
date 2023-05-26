@@ -14,7 +14,6 @@ public class ReservationActivity extends AppCompatActivity {
     private ToggleButton toggleButton3;
     private ToggleButton toggleButton4;
     private TextView statusTextView;
-    private DBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +36,6 @@ public class ReservationActivity extends AppCompatActivity {
 
         // Set initial text of the statusTextView
         updateStatusText();
-
-        // Initialize the DBHelper
-        dbHelper = new DBHelper(this);
 
         // Add onClick listeners to the toggle buttons
         toggleButton1.setOnClickListener(v -> updateStatusText());

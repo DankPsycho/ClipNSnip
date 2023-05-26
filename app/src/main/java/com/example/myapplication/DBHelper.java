@@ -1,5 +1,4 @@
 package com.example.myapplication;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,13 +8,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "reservation.db";
     private static final int DATABASE_VERSION = 1;
-
     // Table name and column names
-    private static final String TABLE_RESERVATION = "reservation";
+    private static final String TABLE_RESERVATION = "reservations";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_DATE = "date";
     private static final String COLUMN_TIME = "time";
-    private static final String COLUMN_SERVICE = "service";
+    private static final String COLUMN_SERVICES = "services";
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -23,12 +21,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Create the reservation table
+        // Create the reservations table
         String createTableQuery = "CREATE TABLE " + TABLE_RESERVATION + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_DATE + " TEXT, "
                 + COLUMN_TIME + " TEXT, "
-                + COLUMN_SERVICE + " TEXT)";
+                + COLUMN_SERVICES + " TEXT)";
         db.execSQL(createTableQuery);
     }
 
@@ -39,25 +37,11 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addReservation(SQLiteDatabase db, String date, String time, String service) {
+    public void addReservation(SQLiteDatabase db, String date, String time, String services) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_DATE, date);
         values.put(COLUMN_TIME, time);
-        values.put(COLUMN_SERVICE, service);
+        values.put(COLUMN_SERVICES, services);
         db.insert(TABLE_RESERVATION, null, values);
     }
-
-    public static String getColumnDate() {
-        return COLUMN_DATE;
-    }
-
-    public static String getColumnTime() {
-        return COLUMN_TIME;
-    }
-
-    public static String getTableReservation() {
-        return TABLE_RESERVATION;
-    }
-
-    // Add other helper methods as needed for querying or manipulating the database
 }
