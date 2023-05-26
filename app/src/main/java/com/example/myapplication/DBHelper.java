@@ -1,9 +1,9 @@
 package com.example.myapplication;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.content.ContentValues;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -15,6 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_DATE = "date";
     private static final String COLUMN_TIME = "time";
+    private static final String COLUMN_SERVICE = "service";
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -26,7 +27,8 @@ public class DBHelper extends SQLiteOpenHelper {
         String createTableQuery = "CREATE TABLE " + TABLE_RESERVATION + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + COLUMN_DATE + " TEXT, "
-                + COLUMN_TIME + " TEXT)";
+                + COLUMN_TIME + " TEXT, "
+                + COLUMN_SERVICE + " TEXT)";
         db.execSQL(createTableQuery);
     }
 
@@ -37,23 +39,25 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addReservation(String date, String time) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    public void addReservation(SQLiteDatabase db, String date, String time, String service) {
         ContentValues values = new ContentValues();
         values.put(COLUMN_DATE, date);
         values.put(COLUMN_TIME, time);
+        values.put(COLUMN_SERVICE, service);
         db.insert(TABLE_RESERVATION, null, values);
-        db.close();
     }
+
     public static String getColumnDate() {
         return COLUMN_DATE;
     }
+
     public static String getColumnTime() {
         return COLUMN_TIME;
     }
+
     public static String getTableReservation() {
         return TABLE_RESERVATION;
     }
-    // Add other helper methods as needed for querying or manipulating the database
 
+    // Add other helper methods as needed for querying or manipulating the database
 }

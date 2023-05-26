@@ -28,6 +28,9 @@ public class ConfirmationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
 
+        // Get the selected service from the intent extras
+        String selectedService = getIntent().getStringExtra("selectedService");
+
         // Initialize the DBHelper
         dbHelper = new DBHelper(this);
         database = dbHelper.getWritableDatabase();
@@ -45,12 +48,7 @@ public class ConfirmationActivity extends AppCompatActivity {
             String selectedTime = getSelectedTime(shiftsRadioGroup);
 
             // Insert the reservation into the SQLite table
-            ContentValues values = new ContentValues();
-            values.put(DBHelper.getColumnDate(), selectedDate);
-            values.put(DBHelper.getColumnTime(), selectedTime);
-
-            database.insert(DBHelper.getTableReservation(), null, values);
-            dbHelper.addReservation(selectedDate, selectedTime);
+            dbHelper.addReservation(database, selectedDate, selectedTime, selectedService);
 
             // Show a toast message for confirmation
             Toast.makeText(this, "Reservation confirmed", Toast.LENGTH_SHORT).show();
