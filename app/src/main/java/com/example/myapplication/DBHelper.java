@@ -9,6 +9,8 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "reservation.db";
     private static final int DATABASE_VERSION = 1;
     // Table name and column names
+
+
     private static final String TABLE_RESERVATION = "reservations";
     private static final String COLUMN_ID = "id";
     private static final String COLUMN_DATE = "date";

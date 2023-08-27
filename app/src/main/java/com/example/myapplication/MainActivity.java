@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Button reservationButton = findViewById(R.id.button_reservation);
         reservationButton.setOnClickListener(v -> {
             // Handle button click and navigate to the reservation screen
-            Intent intent = new Intent(MainActivity.this, ReservationActivity.class);
+            Intent intent = new Intent(MainActivity.this, UserDetailsActivity.class);
             startActivity(intent);
         });
     }

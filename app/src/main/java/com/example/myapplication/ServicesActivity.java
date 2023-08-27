@@ -7,7 +7,7 @@ import android.widget.ToggleButton;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ReservationActivity extends AppCompatActivity {
+public class ServicesActivity extends AppCompatActivity {
 
     private ToggleButton toggleButton1;
     private ToggleButton toggleButton2;
@@ -18,12 +18,12 @@ public class ReservationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reservation);
+        setContentView(R.layout.activity_services);
 
         Button reservationButton = findViewById(R.id.button_select_services);
         reservationButton.setOnClickListener(v -> {
             // Handle button click and navigate to the ConfirmationActivity
-            Intent intent = new Intent(ReservationActivity.this, ConfirmationActivity.class);
+            Intent intent = new Intent(ServicesActivity.this, ConfirmationActivity.class);
             intent.putExtra("selectedService", getSelectedService());
             startActivity(intent);
         });
@@ -48,24 +48,24 @@ public class ReservationActivity extends AppCompatActivity {
     private void updateStatusText() {
         StringBuilder status = new StringBuilder();
         if (toggleButton1.isChecked()) {
-            status.append("ToggleButton1 is ON\n");
+            status.append("• Shaving\n");
         } else {
-            status.append("ToggleButton1 is OFF\n");
+            status.append("\n");
         }
         if (toggleButton2.isChecked()) {
-            status.append("ToggleButton2 is ON\n");
+            status.append("• Hair Washing\n");
         } else {
-            status.append("ToggleButton2 is OFF\n");
+            status.append("\n");
         }
         if (toggleButton3.isChecked()) {
-            status.append("ToggleButton3 is ON\n");
+            status.append("• Hair Care\n");
         } else {
-            status.append("ToggleButton3 is OFF\n");
+            status.append("\n");
         }
         if (toggleButton4.isChecked()) {
-            status.append("ToggleButton4 is ON\n");
+            status.append("• Beard trimming\n");
         } else {
-            status.append("ToggleButton4 is OFF\n");
+            status.append("\n");
         }
 
         statusTextView.setText(status.toString());
