@@ -10,7 +10,7 @@
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reservation"
+        android:text="Time and date"
         android:textSize="24sp"
         android:textColor="#FFFFFF"
         app:layout_constraintTop_toTopOf="parent"

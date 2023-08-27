@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class ConfirmationActivity extends AppCompatActivity {
+public class TimeAndDateActivity extends AppCompatActivity {
 
     private DBHelper dbHelper;
     private SQLiteDatabase database;
@@ -22,7 +22,7 @@ public class ConfirmationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirmation);
+        setContentView(R.layout.activity_time_and_date);
 
         // Get the selected service from the intent extras
         String selectedService = getIntent().getStringExtra("selectedService");

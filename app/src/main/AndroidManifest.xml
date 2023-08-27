@@ -19,7 +19,7 @@
             android:name=".ServicesActivity"
             android:exported="false" />
         <activity
-            android:name=".ConfirmationActivity"
+            android:name=".TimeAndDateActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
