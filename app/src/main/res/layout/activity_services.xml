@@ -1,63 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#1E1E1E"
     tools:context=".ServicesActivity">
-
-    <ToggleButton
-        android:id="@+id/toggleButton1"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/toggle_button_shaving"
-        android:text="@string/toggle_button_shaving"
-        android:textOff="@string/blankspace"
-        android:textOn="@string/blankspace"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <ToggleButton
-        android:id="@+id/toggleButton2"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/toggle_button_washing"
-        android:text="@string/toggle_button_hairwashing"
-        android:textOff="@string/blankspace"
-        android:textOn="@string/blankspace"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <ToggleButton
-        android:id="@+id/toggleButton3"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/toggle_button_care"
-        android:text="@string/toggle_button_care"
-        android:textOff="@string/blankspace"
-        android:textOn="@string/blankspace"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <ToggleButton
-        android:id="@+id/toggleButton4"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/toggle_button_trimming"
-        android:text="@string/toggle_button_trimming"
-        android:textOff="@string/blankspace"
-        android:textOn="@string/blankspace"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView2"
@@ -72,7 +20,166 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- HairCutting -->
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/toggle_button_hair_cutting"
+        android:textOff="@string/blankspace"
+        android:textOn="@string/blankspace"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
+    <TextView
+        android:id="@+id/textViewHairCutting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/toggle_button_HairCutting"
+        android:textColor="#D8D8D8"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton1"
+        app:layout_constraintTop_toTopOf="@id/toggleButton1" />
+
+    <TextView
+        android:id="@+id/textViewHairCuttingPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:text="$10"
+        android:textColor="#D8D8D8"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton1"
+        app:layout_constraintTop_toBottomOf="@id/textViewHairCutting" />
+
+    <!-- Beard Trimming -->
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/toggle_button_beard_trimming"
+        android:textOff="@string/blankspace"
+        android:textOn="@string/blankspace"
+        app:layout_constraintStart_toStartOf="@id/toggleButton1"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton1" />
+
+    <TextView
+        android:id="@+id/textViewBeardTrimming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/toggle_button_BeardTrimming"
+        android:textColor="#D8D8D8"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton2"
+        app:layout_constraintTop_toTopOf="@id/toggleButton2" />
+
+    <TextView
+        android:id="@+id/textViewBeardTrimmingPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:text="$8"
+        android:textColor="#D8D8D8"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton2"
+        app:layout_constraintTop_toBottomOf="@id/textViewBeardTrimming" />
+
+    <!-- Hair Washing -->
+    <ToggleButton
+        android:id="@+id/toggleButton3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/toggle_button_hair_washing"
+        android:textOff="@string/blankspace"
+        android:textOn="@string/blankspace"
+        app:layout_constraintStart_toStartOf="@id/toggleButton2"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton2" />
+
+    <TextView
+        android:id="@+id/textViewHairWashing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/toggle_button_HairWashing"
+        android:textColor="#D8D8D8"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton3"
+        app:layout_constraintTop_toTopOf="@id/toggleButton3" />
+
+    <TextView
+        android:id="@+id/textViewHairWashingPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:text="$5"
+        android:textColor="#D8D8D8"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton3"
+        app:layout_constraintTop_toBottomOf="@id/textViewHairWashing" />
+
+    <!-- Styling -->
+    <ToggleButton
+        android:id="@+id/toggleButton4"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/toggle_button_styling"
+        android:textOff="@string/blankspace"
+        android:textOn="@string/blankspace"
+        app:layout_constraintStart_toStartOf="@id/toggleButton3"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton3" />
+
+    <TextView
+        android:id="@+id/textViewStyling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/toggle_button_Styling"
+        android:textColor="#D8D8D8"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton4"
+        app:layout_constraintTop_toTopOf="@id/toggleButton4" />
+
+    <TextView
+        android:id="@+id/textViewStylingPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:text="$5"
+        android:textColor="#D8D8D8"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@id/toggleButton4"
+        app:layout_constraintTop_toBottomOf="@id/textViewStyling" />
+
+    <!-- status -->
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_select_services"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton4"
+        app:layout_constraintVertical_bias="0.512"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <!-- Select services -->
     <Button
         android:id="@+id/button_select_services"
         android:layout_width="wrap_content"
@@ -84,62 +191,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/statusTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp"
-        android:textColor="#FFFFFF"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_select_services"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.512"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="160dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:text="Shaving"
-        android:textColor="#D8D8D8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton1" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="160dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:text="Hair Care"
-        android:textColor="#D8D8D8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton3" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="160dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:text="Beard Trimming"
-        android:textColor="#D8D8D8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton3" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="160dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:text="Hair Washing"
-        android:textColor="#D8D8D8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggleButton2" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
