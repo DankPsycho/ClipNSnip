@@ -18,4 +18,6 @@
     <string name="logo_description">logo</string>
     <string name="reservation">Make a Reservation</string>
     <string name="confirmation">Confirm reservation</string>
+    <string name="thank_you_message">Thank you %1$s! An email confirmation has been sent to %2$s.</string>
+
 </resources>

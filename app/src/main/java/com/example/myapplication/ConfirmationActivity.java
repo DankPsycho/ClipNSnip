@@ -1,9 +1,14 @@
 package com.example.myapplication;
-
 import android.os.Bundle;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import android.database.sqlite.SQLiteDatabase;
+import com.example.myapplication.DBHelper;
+import android.widget.Button;
+import android.view.View;
+import android.content.Intent;
+import android.widget.Toast;
+import androidx.core.content.ContextCompat;
 
 
 public class ConfirmationActivity extends AppCompatActivity {
@@ -44,7 +49,26 @@ public class ConfirmationActivity extends AppCompatActivity {
         TextView selectedTimeTextView = findViewById(R.id.selectedTimeTextView);
         selectedTimeTextView.setText("Time: " + selectedTime);
 
-        // Rest of your code...
-    }
+        Button confirmButton = findViewById(R.id.confirmButton);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create or open the database
+                DBHelper dbHelper = new DBHelper(ConfirmationActivity.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+                // Add reservation to the database
+                dbHelper.addReservation(db, fullName, email, mobile, selectedDate, selectedTime, selectedServices, totalPrice);
+
+                // Close the database connection
+                db.close();
+                // Start ThankYouActivity
+                Intent intent = new Intent(ConfirmationActivity.this, ThankYouActivity.class);
+                intent.putExtra("fullName",getIntent().getStringExtra("fullName"));
+                intent.putExtra("email", getIntent().getStringExtra("email"));
+                startActivity(intent);
+            }
+        });
+
+    }
 }

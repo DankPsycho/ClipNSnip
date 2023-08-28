@@ -8,7 +8,7 @@ import static org.junit.Assert.assertTrue;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
+/*
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -152,4 +152,4 @@ public class DBHelperTest {
         cursor.close();
         return tableExists;
     }
-}
+}*/

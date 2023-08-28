@@ -27,10 +27,6 @@ public class UserDetailsActivity extends AppCompatActivity {
 
         // Set OnClickListener for the "Next" button
         buttonNext.setOnClickListener(v -> {
-            // Get user details from the EditText fields
-            String fullName = editTextFullName.getText().toString();
-            String email = editTextEmail.getText().toString();
-            String mobile = editTextMobile.getText().toString();
 
             // Create an intent to navigate to the ConfirmationActivity
             Intent intent = new Intent(UserDetailsActivity.this, ConfirmationActivity.class);
