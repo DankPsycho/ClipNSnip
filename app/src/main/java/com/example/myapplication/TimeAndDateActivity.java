@@ -1,21 +1,21 @@
 package com.example.myapplication;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import android.database.sqlite.SQLiteDatabase;
+
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 public class TimeAndDateActivity extends AppCompatActivity {
-
-    private DBHelper dbHelper;
-    private SQLiteDatabase database;
     private RadioGroup shiftsRadioGroup;
     private int lastCheckedId;
 
@@ -24,33 +24,6 @@ public class TimeAndDateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_and_date);
 
-        // Get the selected service from the intent extras
-        String selectedService = getIntent().getStringExtra("selectedService");
-
-        // Initialize the DBHelper
-        dbHelper = new DBHelper(this);
-        database = dbHelper.getWritableDatabase();
-
-        // Find the "Confirm Reservation" button and set the OnClickListener
-        Button confirmationButton = findViewById(R.id.confirmation_button);
-        confirmationButton.setOnClickListener(v -> {
-            // Get the selected date from the calendar view
-            CalendarView calendarView = findViewById(R.id.calendarView);
-            long selectedDateInMillis = calendarView.getDate();
-            // Convert the selected date to a desired format if needed
-            String selectedDate = formatDate(selectedDateInMillis);
-
-            // Get the selected time from the selected radio button
-            String selectedTime = getSelectedTime(shiftsRadioGroup);
-
-            // Insert the reservation into the SQLite table
-            dbHelper.addReservation(database, selectedDate, selectedTime, selectedService);
-
-            // Show a toast message for confirmation
-            Toast.makeText(this, "Reservation confirmed", Toast.LENGTH_SHORT).show();
-        });
-
-        // Find the shifts radio group and assign it to the shiftsRadioGroup variable
         shiftsRadioGroup = findViewById(R.id.shiftsRadioGroup);
         lastCheckedId = shiftsRadioGroup.getCheckedRadioButtonId();
 
@@ -66,15 +39,20 @@ public class TimeAndDateActivity extends AppCompatActivity {
 
             lastCheckedId = checkedId;
         });
-    }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        // Close the database when the activity is destroyed
-        if (database != null && database.isOpen()) {
-            database.close();
-        }
+        // Find the "Confirm Time and Date" button and set the OnClickListener
+        Button confirmButton = findViewById(R.id.time_and_date_button);
+        confirmButton.setOnClickListener(v -> {
+
+            // Create an intent to navigate to the UserDetailsActivity
+            Intent intent = new Intent(TimeAndDateActivity.this, UserDetailsActivity.class);
+            intent.putExtra("selectedTime", getSelectedTime());
+            intent.putExtra("selectedDate", getSelectedDate());
+            intent.putExtra("selectedServices", getIntent().getStringExtra("selectedServices"));
+            intent.putExtra("totalPrice", getIntent().getDoubleExtra("totalPrice", 0.0));
+
+            startActivity(intent);
+        });
     }
 
     private String formatDate(long dateInMillis) {
@@ -94,5 +72,18 @@ public class TimeAndDateActivity extends AppCompatActivity {
             selectedTime.delete(selectedTime.length() - 2, selectedTime.length());
         }
         return selectedTime.toString();
+    }
+
+    // Getter method to retrieve selected date
+    public String getSelectedDate() {
+        CalendarView calendarView = findViewById(R.id.calendarView);
+        long selectedDateInMillis = calendarView.getDate();
+        return formatDate(selectedDateInMillis);
+    }
+
+    // Getter method to retrieve selected time
+    public String getSelectedTime() {
+        RadioGroup shiftsGroup = findViewById(R.id.shiftsRadioGroup);
+        return getSelectedTime(shiftsGroup);
     }
 }

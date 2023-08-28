@@ -7,8 +7,8 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class UserDetailsActivity extends AppCompatActivity {
 
+public class UserDetailsActivity extends AppCompatActivity {
     private EditText editTextFullName;
     private EditText editTextEmail;
     private EditText editTextMobile;
@@ -32,11 +32,31 @@ public class UserDetailsActivity extends AppCompatActivity {
             String email = editTextEmail.getText().toString();
             String mobile = editTextMobile.getText().toString();
 
-            // Store in database here!!!
-
-            // Navigate to the ServicesActivity
-            Intent intent = new Intent(UserDetailsActivity.this, ServicesActivity.class);
+            // Create an intent to navigate to the ConfirmationActivity
+            Intent intent = new Intent(UserDetailsActivity.this, ConfirmationActivity.class);
+            intent.putExtra("fullName",getFullName());
+            intent.putExtra("email",getEmail());
+            intent.putExtra("mobile",getMobile());
+            intent.putExtra("selectedTime",getIntent().getStringExtra("selectedTime"));
+            intent.putExtra("selectedDate", getIntent().getStringExtra("selectedDate"));
+            intent.putExtra("selectedServices", getIntent().getStringExtra("selectedServices"));
+            intent.putExtra("totalPrice", getIntent().getDoubleExtra("totalPrice", 0.0));
             startActivity(intent);
         });
+    }
+
+    // Getter method to retrieve full name
+    public String getFullName() {
+        return editTextFullName.getText().toString();
+    }
+
+    // Getter method to retrieve email
+    public String getEmail() {
+        return editTextEmail.getText().toString();
+    }
+
+    // Getter method to retrieve mobile number
+    public String getMobile() {
+        return editTextMobile.getText().toString();
     }
 }

@@ -7,6 +7,7 @@ import android.widget.ToggleButton;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class ServicesActivity extends AppCompatActivity {
 
     private ToggleButton toggleButton1;
@@ -15,13 +16,12 @@ public class ServicesActivity extends AppCompatActivity {
     private ToggleButton toggleButton4;
     private TextView statusTextView;
 
-
     private double hairCuttingPrice = 10.0;
     private double beardTrimmingPrice = 8.0;
     private double hairWashingPrice = 5.0;
     private double stylingPrice = 5.0;
     private double totalPrice = 0.0;
-
+    private StringBuilder selectedServices = new StringBuilder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,13 @@ public class ServicesActivity extends AppCompatActivity {
 
         Button reservationButton = findViewById(R.id.button_select_services);
         reservationButton.setOnClickListener(v -> {
-            // Handle button click and navigate to the ConfirmationActivity
+
+            // Handle button click and navigate to the TimeAndDateActivity
             Intent intent = new Intent(ServicesActivity.this, TimeAndDateActivity.class);
-            intent.putExtra("selectedService", getSelectedService());
+            // Put data in the intent
+            intent.putExtra("selectedServices", getSelectedServicesString());
+            intent.putExtra("totalPrice", getTotalPrice());
+
             startActivity(intent);
         });
 
@@ -54,30 +58,24 @@ public class ServicesActivity extends AppCompatActivity {
 
     // Update the statusTextView text based on the toggled buttons
     private void updateStatusText() {
-        StringBuilder status = new StringBuilder();
-        StringBuilder selectedServices = new StringBuilder();
-
+        selectedServices.setLength(0); // Clear the previous selections
         totalPrice = 0.0; // Reset the total price
 
         if (toggleButton1.isChecked()) {
-            status.append("• Shaving\n");
-            selectedServices.append("Shaving, ");
+            selectedServices.append("Hair Cutting (10€), ");
             totalPrice += hairCuttingPrice;
         }
         if (toggleButton2.isChecked()) {
-            status.append("• Hair Washing\n");
-            selectedServices.append("Hair Washing, ");
-            totalPrice += hairWashingPrice;
+            selectedServices.append("Beard Trimming (8€), ");
+            totalPrice += beardTrimmingPrice;
         }
         if (toggleButton3.isChecked()) {
-            status.append("• Hair Care\n");
-            selectedServices.append("Hair Care, ");
-            totalPrice += stylingPrice;
+            selectedServices.append("Hair Washing (5€), ");
+            totalPrice += hairWashingPrice;
         }
         if (toggleButton4.isChecked()) {
-            status.append("• Beard trimming\n");
-            selectedServices.append("Beard Trimming, ");
-            totalPrice += beardTrimmingPrice;
+            selectedServices.append("Styling (5€), ");
+            totalPrice += stylingPrice;
         }
 
         if (selectedServices.length() > 0) {
@@ -90,31 +88,13 @@ public class ServicesActivity extends AppCompatActivity {
         }
     }
 
-
-    // Get the selected service
-    private String getSelectedService() {
-        StringBuilder selectedService = new StringBuilder();
-        if (toggleButton1.isChecked()) {
-            selectedService.append("Service1 (Shaving), ");
-        }
-        if (toggleButton2.isChecked()) {
-            selectedService.append("Service2 (Hair Washing), ");
-        }
-        if (toggleButton3.isChecked()) {
-            selectedService.append("Service3 (Hair Care), ");
-        }
-        if (toggleButton4.isChecked()) {
-            selectedService.append("Service4 (Beard trimming), ");
-        }
-
-        // Remove the trailing comma and space
-        if (selectedService.length() > 0) {
-            selectedService.delete(selectedService.length() - 2, selectedService.length());
-        }
-
-        selectedService.append("\nTotal Price: $" + totalPrice); // Append total price
-
-        return selectedService.toString();
+    // Getter method to retrieve the selected services string
+    public String getSelectedServicesString() {
+        return selectedServices.toString();
     }
 
+    // Getter method to retrieve the total price
+    public double getTotalPrice() {
+        return totalPrice;
+    }
 }

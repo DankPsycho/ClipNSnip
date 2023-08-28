@@ -104,11 +104,11 @@
 
 
     <Button
-        android:id="@+id/confirmation_button"
+        android:id="@+id/time_and_date_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
-        android:text="@string/confirmation"
+        android:text="Confirm Time and Date"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
