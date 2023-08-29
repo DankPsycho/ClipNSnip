@@ -3,13 +3,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.database.sqlite.SQLiteDatabase;
-import com.example.myapplication.DBHelper;
 import android.widget.Button;
 import android.view.View;
 import android.content.Intent;
-import android.widget.Toast;
-import androidx.core.content.ContextCompat;
-
 
 public class ConfirmationActivity extends AppCompatActivity {
 
@@ -69,6 +65,5 @@ public class ConfirmationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

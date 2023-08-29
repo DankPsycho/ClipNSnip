@@ -7,8 +7,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
 
 public class ThankYouActivity extends AppCompatActivity {
+
+    private RecyclerView recyclerView;
+    private ReservationAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,5 +41,15 @@ public class ThankYouActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        recyclerView = findViewById(R.id.recyclerView);
+        adapter = new ReservationAdapter(getReservationsFromDatabase()); // Corrected method call
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private List<Reservation> getReservationsFromDatabase() {
+        DBHelper dbHelper = new DBHelper(this);
+        return dbHelper.getReservations(); // Corrected method call
     }
 }

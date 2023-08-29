@@ -2,8 +2,11 @@ package com.example.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -55,5 +58,54 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(COLUMN_SERVICES, services);
         values.put(COLUMN_TOTAL, total);
         db.insert(TABLE_RESERVATION, null, values);
+    }
+    public void addReservation(String fullName, String email, String mobile, String date, String time, String services, Double total) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_FULL_NAME, fullName);
+        values.put(COLUMN_EMAIL, email);
+        values.put(COLUMN_MOBILE, mobile);
+        values.put(COLUMN_DATE, date);
+        values.put(COLUMN_TIME, time);
+        values.put(COLUMN_SERVICES, services);
+        values.put(COLUMN_TOTAL, total);
+        db.insert(TABLE_RESERVATION, null, values);
+        db.close();
+    }
+
+    public List<Reservation> getReservations() {
+        List<Reservation> reservations = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_RESERVATION, null);
+
+        if (cursor.moveToFirst()) {
+            int idIndex = cursor.getColumnIndex(COLUMN_ID);
+            int fullNameIndex = cursor.getColumnIndex(COLUMN_FULL_NAME);
+            int emailIndex = cursor.getColumnIndex(COLUMN_EMAIL);
+            int mobileIndex = cursor.getColumnIndex(COLUMN_MOBILE);
+            int dateIndex = cursor.getColumnIndex(COLUMN_DATE);
+            int timeIndex = cursor.getColumnIndex(COLUMN_TIME);
+            int servicesIndex = cursor.getColumnIndex(COLUMN_SERVICES);
+            int totalIndex = cursor.getColumnIndex(COLUMN_TOTAL);
+
+            do {
+                int id = cursor.getInt(idIndex);
+                String fullName = cursor.getString(fullNameIndex);
+                String email = cursor.getString(emailIndex);
+                String mobile = cursor.getString(mobileIndex);
+                String date = cursor.getString(dateIndex);
+                String time = cursor.getString(timeIndex);
+                String services = cursor.getString(servicesIndex);
+                double total = cursor.getDouble(totalIndex);
+
+                Reservation reservation = new Reservation(id, fullName, email, mobile, date, time, services, total);
+                reservations.add(reservation);
+            } while (cursor.moveToNext());
+        }
+
+
+        cursor.close();
+        db.close();
+        return reservations;
     }
 }
