@@ -10,10 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ServicesActivity extends AppCompatActivity {
 
-    private ToggleButton toggleButton1;
-    private ToggleButton toggleButton2;
-    private ToggleButton toggleButton3;
-    private ToggleButton toggleButton4;
+    public ToggleButton toggleButton1;
+    public ToggleButton toggleButton2;
+    public ToggleButton toggleButton3;
+    public ToggleButton toggleButton4;
     private TextView statusTextView;
 
     private double hairCuttingPrice = 10.0;
@@ -57,7 +57,7 @@ public class ServicesActivity extends AppCompatActivity {
     }
 
     // Update the statusTextView text based on the toggled buttons
-    private void updateStatusText() {
+    public void updateStatusText() {
         selectedServices.setLength(0); // Clear the previous selections
         totalPrice = 0.0; // Reset the total price
 
@@ -96,5 +96,9 @@ public class ServicesActivity extends AppCompatActivity {
     // Getter method to retrieve the total price
     public double getTotalPrice() {
         return totalPrice;
+    }
+    //for testing
+    public String getStatusText() {
+        return statusTextView.getText().toString();
     }
 }

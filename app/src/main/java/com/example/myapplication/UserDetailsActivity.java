@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class UserDetailsActivity extends AppCompatActivity {
-    private EditText editTextFullName;
-    private EditText editTextEmail;
-    private EditText editTextMobile;
+    public EditText editTextFullName;
+    public EditText editTextEmail;
+    public EditText editTextMobile;
     private Button buttonNext;
 
     @Override

@@ -1,15 +1,14 @@
 package com.example.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -55,12 +54,12 @@ public class TimeAndDateActivity extends AppCompatActivity {
         });
     }
 
-    private String formatDate(long dateInMillis) {
+    public String formatDate(long dateInMillis) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         return sdf.format(new Date(dateInMillis));
     }
 
-    private String getSelectedTime(RadioGroup shiftsGroup) {
+    public String getSelectedTime(RadioGroup shiftsGroup) {
         StringBuilder selectedTime = new StringBuilder();
         int selectedRadioButtonId = shiftsGroup.getCheckedRadioButtonId();
         if (selectedRadioButtonId != -1) {
