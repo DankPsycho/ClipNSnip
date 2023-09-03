@@ -1,31 +1,20 @@
 package com.example.myapplication;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-public class MainActivity extends AppCompatActivity {
+public class AboutUsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_about_us);
 
         Button reservationButton = findViewById(R.id.button_reservation);
         reservationButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ServicesActivity.class);
+            Intent intent = new Intent(AboutUsActivity.this, ServicesActivity.class);
             startActivity(intent);
         });
-        Button aboutUsButton = findViewById(R.id.button_about_us);
-        aboutUsButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AboutUsActivity.class);
-            startActivity(intent);
-        });
-
     }
-
-
 }

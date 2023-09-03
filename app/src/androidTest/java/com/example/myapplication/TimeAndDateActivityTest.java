@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import static androidx.test.core.app.ActivityScenario.launch;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -42,7 +43,7 @@ public class TimeAndDateActivityTest {
             String selectedDate = activity.getSelectedDate();
 
             // Test that the selected date is not null or empty
-            assertEquals(false, selectedDate.isEmpty());
+            assertFalse(selectedDate.isEmpty());
         });
     }
 }

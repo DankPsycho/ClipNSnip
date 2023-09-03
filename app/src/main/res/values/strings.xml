@@ -6,7 +6,6 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="toggle_button_HairCutting">Hair Cutting</string>
     <string name="toggle_button_BeardTrimming">Beard Trimming</string>
     <string name="toggle_button_HairWashing">Hair Washing</string>
@@ -14,10 +13,38 @@
     <string name="select_services">Select Services</string>
     <string name="services">Services</string>
     <string name="blankspace"> </string>
-
     <string name="logo_description">logo</string>
     <string name="reservation">Make a Reservation</string>
     <string name="confirmation">Confirm reservation</string>
     <string name="thank_you_message">Thank you %1$s! An email confirmation has been sent to %2$s.</string>
+    <string name="confirmation_text">Confirmation</string>
+    <string name="time_and_date">Time And Date</string>
+    <string name="confirm_reservation">Confirm Reservation</string>
+    <string name="customer_information">Customer Information</string>
+    <string name="return_to_main_page">Return to Main Page</string>
+    <string name="work_day_shifts">Work Day Shifts</string>
+    <string name="eight_o_clock">8:00</string>
+    <string name="ten_o_clock">10:00</string>
+    <string name="twelve_o_clock">12:00</string>
+    <string name="confirm_time_and_date">Confirm Time and Date</string>
+
+    <string name="enter_your_details">Enter Your Details</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_full_name">Enter your full name</string>
+    <string name="email_address">Email Address</string>
+    <string name="enter_email_address">Enter your email address</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="enter_mobile_number">Enter your mobile number</string>
+    <string name="confirm_details">Confirm details</string>
+    <string name="about_us_title">About Us</string>
+    <string name="about_us_description">Welcome to our company! </string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="barber_1_name">Marko Novak</string>
+    <string name="barber_1_description">Personal hairdresser with over ten years of experience in the beauty industry. My passion for hairstyling is evident in every cut and style I create. Every client is important to me, and each visit to my salon is an opportunity to craft a unique hairstyle that suits you and boosts your confidence.</string>
+    <string name="barber_2_name">Petar Kovač</string>
+    <string name="barber_2_description">Hairdresser with a passion for the art of hairstyling. Every time you step into my salon, I work diligently to provide you with a hairstyle that will delight you. With years of experience and a keen understanding of the latest trends, I aim to make every moment spent in my salon special and relaxing.</string>
+    <string name="location">Location: 123 ulica, Zagreb, Croatia</string>
+    <string name="contact_number">Contact number: +1 (555) 123-4567</string>
+
 
 </resources>

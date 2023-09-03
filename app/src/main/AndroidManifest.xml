@@ -28,6 +28,9 @@
             android:name=".TimeAndDateActivity"
             android:exported="false" />
         <activity
+            android:name=".AboutUsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
