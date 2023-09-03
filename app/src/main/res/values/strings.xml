@@ -42,9 +42,12 @@
     <string name="barber_1_name">Marko Novak</string>
     <string name="barber_1_description">Personal hairdresser with over ten years of experience in the beauty industry. My passion for hairstyling is evident in every cut and style I create. Every client is important to me, and each visit to my salon is an opportunity to craft a unique hairstyle that suits you and boosts your confidence.</string>
     <string name="barber_2_name">Petar Kovač</string>
-    <string name="barber_2_description">Hairdresser with a passion for the art of hairstyling. Every time you step into my salon, I work diligently to provide you with a hairstyle that will delight you. With years of experience and a keen understanding of the latest trends, I aim to make every moment spent in my salon special and relaxing.</string>
+    <string name="barber_2_description">Hairdresser with a passion for the art of hairstyling. I work diligently to provide you with a hairstyle that will delight you. With years of experience and a keen understanding of the latest trends, I aim to make every moment spent in my salon special and relaxing.</string>
     <string name="location">Location: 123 ulica, Zagreb, Croatia</string>
     <string name="contact_number">Contact number: +1 (555) 123-4567</string>
+    <string name="_10">10€</string>
+    <string name="_8">8€</string>
+    <string name="_5">5€</string>
 
 
 </resources>
